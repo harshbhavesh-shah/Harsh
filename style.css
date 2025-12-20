@@ -20,7 +20,7 @@ header {
     
     /* The Magic Starts Here */
     background-color: rgba(0, 0, 0, 0.4); /* Translucent black */
-    backdrop-filter: blur(20px);          /* The "Frost" effect */
+    backdrop-filter: blur(50px);          /* The "Frost" effect */
     -webkit-backdrop-filter: blur(20px);  /* For Safari (ironically) */
     
     /* Optional: A subtle border to define the edge */
