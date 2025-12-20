@@ -29,6 +29,12 @@ header {
     /* Smooth transition for when we change styles with JS */
     transition: background-color 0.3s ease, padding 0.3s ease;
 }
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    backdrop-filter: blur(30px);          /* Stronger blur */
+    padding: 15px 40px;                   /* Shrink slightly */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
 
 /* Styling the Nav (Just housekeeping) */
 .logo {
