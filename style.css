@@ -1,0 +1,70 @@
+/* Reset basic spacing */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #000; /* Dark mode implies sophistication */
+    color: #fff;
+}
+
+/* The Liquid Glass Header */
+header {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Stay on top of everything */
+    
+    /* The Magic Starts Here */
+    background-color: rgba(0, 0, 0, 0.4); /* Translucent black */
+    backdrop-filter: blur(20px);          /* The "Frost" effect */
+    -webkit-backdrop-filter: blur(20px);  /* For Safari (ironically) */
+    
+    /* Optional: A subtle border to define the edge */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Smooth transition for when we change styles with JS */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Styling the Nav (Just housekeeping) */
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Dummy content styling */
+.hero {
+    height: 100vh;
+    background: linear-gradient(45deg, #ff00cc, #333399);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    height: 150vh;
+    padding: 50px;
+    background-color: #111;
+}
