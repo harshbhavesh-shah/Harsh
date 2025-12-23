@@ -7,9 +7,9 @@
     <style>
         /* RESET & VARIABLES */
         :root {
-            --bg-cream: #F9F7F2;      /* Very light cream */
-            --text-dark: #2C2C2C;     /* Soft black for text */
-            --accent-orange: #D98354; /* Muted, earthy orange */
+            --bg-cream: #F9F7F2;     
+            --text-dark: #2C2C2C;     
+            --accent-orange: #D98354; 
             --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
@@ -26,12 +26,28 @@
             line-height: 1.6;
         }
 
-        /* HEADER & NAV */
-        header {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Header */
+        <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <span>Art Smart</span>
+            </a>
+        </div>
+        
+        <button class="hamburger" id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="pages/events.html">Events</a></li>
+                <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
         }
 
         .logo {
@@ -57,7 +73,7 @@
             color: var(--accent-orange);
         }
 
-        /* HERO SECTION */
+        /* Hero */
         .hero {
             text-align: center;
             padding: 8rem 1rem;
@@ -81,7 +97,7 @@
             margin-right: auto;
         }
 
-        /* BUTTONS */
+        /* Buttons */
         .cta-button {
             background-color: transparent;
             border: 2px solid var(--text-dark);
@@ -104,7 +120,7 @@
             transform: translateY(0);
         }
 
-        /* CONTENT SECTION */
+        /* Content */
         .content-section {
             padding: 4rem 10%;
         }
@@ -131,7 +147,7 @@
             font-size: 0.95rem;
         }
 
-        /* FOOTER */
+        /* Footer */
         footer {
             text-align: center;
             padding: 3rem;
@@ -181,7 +197,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Canvas & Chaos. No refunds on spilled paint.</p>
+        <p>&copy; 2025 Art Smart. No refunds on spilled paint.</p>
     </footer>
 
 </body>
