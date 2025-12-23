@@ -26,29 +26,17 @@
             line-height: 1.6;
         }
 
-        /* Header */
-        <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <span>Art Smart</span>
-            </a>
-        </div>
-        
-        <button class="hamburger" id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="nav">
-            <ul>
-                <li><a href="pages/about.html">About Us</a></li>
-                <li><a href="pages/events.html">Events</a></li>
-                <li><a href="pages/contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+        /* HEADER & NAV */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        /* I removed the rogue HTML that was stuck here. 
+           CSS implies strictly style rules, not structure!
+        */
 
         .logo {
             font-weight: 700;
@@ -73,7 +61,7 @@
             color: var(--accent-orange);
         }
 
-        /* Hero */
+        /* HERO SECTION */
         .hero {
             text-align: center;
             padding: 8rem 1rem;
@@ -85,7 +73,7 @@
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            font-weight: 300; /* Minimalist look */
+            font-weight: 300; 
         }
 
         .hero p {
@@ -97,7 +85,7 @@
             margin-right: auto;
         }
 
-        /* Buttons */
+        /* BUTTONS */
         .cta-button {
             background-color: transparent;
             border: 2px solid var(--text-dark);
@@ -106,7 +94,7 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            border-radius: 50px; /* Soft pill shape */
+            border-radius: 50px; 
         }
 
         .cta-button:hover {
@@ -120,7 +108,7 @@
             transform: translateY(0);
         }
 
-        /* Content */
+        /* CONTENT SECTION */
         .content-section {
             padding: 4rem 10%;
         }
@@ -147,7 +135,7 @@
             font-size: 0.95rem;
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 3rem;
@@ -172,6 +160,7 @@
 
     <main>
         <section class="hero">
+            <img src="../content/placeholder.webp" alt="Place holder image">
             <h1>Learn to paint happy little accidents.</h1>
             <p>Because your stick figures deserve a promotion. Join us for a canvas and some mild judgment-free creativity.</p>
             <button class="cta-button">Book a Spot</button>
