@@ -1,8 +1,7 @@
-/* RESET & VARIABLES */
 :root {
-    --bg-cream: #F9F7F2;      /* Very light cream */
-    --text-dark: #2C2C2C;     /* Soft black for text */
-    --accent-orange: #D98354; /* Muted, earthy orange */
+    --bg-cream: #FFF6E8;      
+    --text-dark: #2C2C2C;     
+    --accent-orange: #FFA866; 
     --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -19,7 +18,7 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER & NAV */
+/* HEADER */
 header {
     padding: 2rem 5%;
     display: flex;
@@ -27,10 +26,15 @@ header {
     align-items: center;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: -1px;
+.TitleTop {
+    font-family: "Irish Grover", cursive;
+    transform: translateX(-18px);
+}
+
+.TitleBottom {
+    font-family: "Irish Grover", cursive;
+    transform: translateY(-25px);
+    
 }
 
 .nav-links {
@@ -83,7 +87,7 @@ header {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 50px; /* Soft pill shape */
+    border-radius: 50px;
 }
 
 .cta-button:hover {
