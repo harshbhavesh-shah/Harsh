@@ -26,27 +26,41 @@ header {
     align-items: center;
 }
 
+nav {
+    display: flex;              
+    justify-content: space-between;
+    align-items: center;  
+}
+
+
 .TitleTop {
     font-family: "Irish Grover", cursive;
-    transform: translateX(-18px);
+    transform: translateX(-25px);
+    font-size: 50px;
+    padding-left: 20px;
 }
 
 .TitleBottom {
     font-family: "Irish Grover", cursive;
-    transform: translateY(-25px);
-    
+    transform: translateY(-41px);
+    color: var(--accent-orange);
+    font-size: 50px;
+    padding-left: 20px;
+;    
 }
 
 .nav-links {
     list-style: none;
-    display: flex;
-    gap: 2rem;
+    display: flex;          
+    gap: 2rem;      
+    margin-left: 500px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -54,7 +68,7 @@ header {
     color: var(--accent-orange);
 }
 
-/* HERO SECTION */
+
 .hero {
     text-align: center;
     padding: 8rem 1rem;
