@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Smart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="CSS/style.css">
+
 </head>
 <body>
 
-    <header>
+   <header id="main-header">
         <nav>
             <div class="logo-container">
                 <h1 class="TitleTop">Art</h1>
@@ -45,6 +47,18 @@
                     <h3>Therapeutic</h3>
                     <p>It’s cheaper than therapy and you get to keep the painting.</p>
                 </div>
+                <div class="card">
+                    <h3>Coffee Included</h3>
+                    <p>Caffeine is the primary ingredient in all masterpieces.</p>
+                </div>
+                <div class="card">
+                    <h3>Good Lighting</h3>
+                    <p>Everyone looks better here. Even your painting.</p>
+                </div>
+                <div class="card">
+                    <h3>Music</h3>
+                    <p>We play jazz. If you don't like jazz, pretend you do. That's art.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -52,6 +66,21 @@
     <footer>
         <p>&copy; 2025 Art Smart. No refunds on spilled paint.</p>
     </footer>
+
+    <script>
+        // Grab the header element
+        const header = document.getElementById('main-header');
+
+        // Listen for the scroll event
+        window.addEventListener('scroll', () => {
+            // Check if user has scrolled more than 50 pixels down
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>
