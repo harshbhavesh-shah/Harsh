@@ -1,4 +1,4 @@
-#nav ul li a,
+
 .site-title {
     color: #333;
     font-size: 1.5rem
@@ -49,84 +49,115 @@ main {
         }
 
         header {
-            position: fixed;   
-            top: 0;
-            left: 0;
-            width: 100%;        
-            height: var(--nav-height);
-            background-color: #ffffff; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            padding: 0 5%;
-            z-index: 1000;    
-            transition: all 0.5s ease; 
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-bottom: 1px solid black;
+    position: fixed;   
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100%;        
+    height: var(--nav-height);
+    background-color: rgba(255, 255, 255, 0.80); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    padding: 0 5%;
+    z-index: 1000;   
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    
+    
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
 
-        }
-        header.scrolled {
-            background-color: rgba(255, 255, 255, 0.65); 
-            backdrop-filter: blur(7px); 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            border-bottom-left-radius: 35px;
-            border-bottom-right-radius: 35px;
-            border-bottom: none;
-        }
+/* THE PILL STATE */
+header.scrolled {
+    width: 85%; 
+    top: 25px;  
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(7px); 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border-radius: 50px; 
+    border-bottom: none;
+    height: 80px;
+}
 
-        nav {
-            display: flex;              
-            justify-content: space-between; 
-            align-items: center;  
-            width: 100%;
-            height: 100%;
-        }
+nav {
+    display: flex;              
+    justify-content: space-between; 
+    align-items: center;  
+    width: 100%;
+    height: 100%;
+}
 
-        /* --- LOGO STYLING --- */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 60px;
-            cursor: pointer;
-        }
+/* --- LOGO STYLING --- */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-dark);
+}
 
-        .TitleTop {
-            font-family: "Irish Grover", cursive;
-            font-size: 50px;
-            line-height: 1;
-            transform: translateX(-15px);
-            margin-bottom: 15px;
-        }
+.TitleTop {
+    font-family: "Irish Grover", cursive;
+    font-size: 50px;
+    line-height: 1;
+    transform: translateX(-15px);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
 
-        .TitleBottom {
-            font-family: "Irish Grover", cursive;
-            color: var(--accent-orange);
-            font-size: 50px;
-            line-height: 0;
-            z-index: -1;
-            transform: translateX(10px);
-            padding-bottom: 22px;
-        }
+.TitleBottom {
+    font-family: "Irish Grover", cursive;
+    color: var(--accent-orange);
+    font-size: 50px;
+    line-height: 0;
+    z-index: -1;
+    transform: translateX(10px);
+    padding-bottom: 22px;
+    transition: all 0.3s ease;
+}
 
-        /* --- NAV LINKS --- */
-        .nav-links {
-            list-style: none;
-            display: flex;          
-            gap: 2rem;      
-            margin-left: 0; 
-        }
+header.scrolled .logo-container {
+    flex-direction: row; 
+    align-items: center;
+    gap: 10px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
+header.scrolled .TitleTop {
+    font-size: 32px; 
+    margin-bottom: 0;
+    transform: none; 
+}
 
-        .nav-links a:hover {
-            color: var(--accent-orange);
-        }
+header.scrolled .TitleBottom {
+    font-size: 32px; 
+    padding-bottom: 0;
+    transform: none;
+    line-height: 1;
+}
+
+/* --- NAV LINKS --- */
+.nav-links {
+    list-style: none;
+    display: flex;          
+    gap: 2rem;      
+    margin-left: 0; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
 main {
     max-width: 1400px;
     margin: 0 auto;
