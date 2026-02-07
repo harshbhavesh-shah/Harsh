@@ -1,40 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Global.js loaded and DOM is ready.");
-
-    /* --- 1. SELECTION --- */
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-links');
     const header = document.querySelector('header');
+    const body = document.body;
 
-    /* --- 2. VALIDATION (CS Major sanity check) --- */
-    if (!hamburger || !navMenu) {
-        console.error("Critical Error: Hamburger or Nav elements not found. Check your IDs/Classes.");
-        return;
-    }
+    if (!hamburger || !navMenu) return;
 
-    /* --- 3. HAMBURGER TOGGLE --- */
+    // HAMBURGER CLICK
     hamburger.addEventListener('click', () => {
-        // Toggle the 'active' class on the button (for the X animation)
         hamburger.classList.toggle('active');
-        // Toggle the 'active' class on the menu (to slide it in/out)
         navMenu.classList.toggle('active');
+        
+        // Scroll Lock
+        if (navMenu.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
     });
 
-    /* --- 4. CLOSE MENU ON LINK CLICK --- */
-    // This improves UX so the menu doesn't stay open after navigation
+    // LINK CLICK
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            body.style.overflow = '';
         });
     });
 
-    /* --- 5. SCROLL EFFECT --- */
+    // SCROLL LISTENER
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
+            body.classList.add('scrolled-mode'); // Helper for desktop menu
         } else {
             header.classList.remove('scrolled');
+            body.classList.remove('scrolled-mode');
         }
     });
 });

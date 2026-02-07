@@ -7,47 +7,42 @@
     --nav-height: 100px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--font-main);
     background-color: var(--bg-cream);
     color: var(--text-dark);
     line-height: 1.6;
-    padding-top: var(--nav-height);
+    padding-top: 0; 
+    overflow-x: hidden;
 }
 
-/* --- HEADER  --- */
+/* --- HEADER (Fixed Top) --- */
 header {
     position: fixed;   
     top: 0;
-    left: 50%; 
-    transform: translateX(-50%); 
+    left: 0; 
     width: 100%;        
     height: var(--nav-height);
-    background-color: rgba(255, 255, 255, 0.80); 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    background-color: rgba(255, 255, 255, 0.98); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
     padding: 0 5%;
-    z-index: 1000;   
+    z-index: 1001; 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; 
-    
-    
-    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); 
-    
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); 
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* THE PILL STATE */
+/* Header Scrolled State (Pill) */
 header.scrolled {
     width: 85%; 
+    left: 7.5%; 
     top: 25px;  
     background-color: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(7px); 
+    -webkit-backdrop-filter: blur(7px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     border-radius: 50px; 
     border-bottom: none;
@@ -62,7 +57,7 @@ nav {
     height: 100%;
 }
 
-/* --- LOGO STYLING --- */
+/* --- LOGO --- */
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -73,7 +68,6 @@ nav {
     text-decoration: none;
     color: var(--text-dark);
 }
-
 .TitleTop {
     font-family: "Irish Grover", cursive;
     font-size: 50px;
@@ -82,7 +76,6 @@ nav {
     margin-bottom: 15px;
     transition: all 0.3s ease;
 }
-
 .TitleBottom {
     font-family: "Irish Grover", cursive;
     color: var(--accent-orange);
@@ -94,140 +87,22 @@ nav {
     transition: all 0.3s ease;
 }
 
-header.scrolled .logo-container {
-    flex-direction: row; 
-    align-items: center;
-    gap: 10px;
-}
+/* Logo Scrolled Logic */
+header.scrolled .logo-container { flex-direction: row; align-items: center; gap: 10px; }
+header.scrolled .TitleTop { font-size: 32px; margin-bottom: 0; transform: none; }
+header.scrolled .TitleBottom { font-size: 32px; padding-bottom: 0; transform: none; line-height: 1; }
 
-header.scrolled .TitleTop {
-    font-size: 32px; 
-    margin-bottom: 0;
-    transform: none; 
-}
-
-header.scrolled .TitleBottom {
-    font-size: 32px; 
-    padding-bottom: 0;
-    transform: none;
-    line-height: 1;
-}
-
-/* --- NAV LINKS --- */
-.nav-links {
-    list-style: none;
-    display: flex;          
-    gap: 2rem;      
-    margin-left: 0; 
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--accent-orange);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 8rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    font-weight: 300; 
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* BUTTONS */
-.cta-button {
-    background-color: transparent;
-    border: 2px solid var(--text-dark);
-    color: var(--text-dark);
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 50px;
-}
-
-.cta-button:hover {
-    background-color: var(--accent-orange);
-    border-color: var(--accent-orange);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.cta-button:active {
-    transform: translateY(0);
-}
-
-/* CONTENT SECTION */
-.content-section {
-    padding: 4rem 10%;
-}
-
-.content-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-weight: 400;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-}
-
-.card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.card p {
-    color: #555;
-    font-size: 0.95rem;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 3rem;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 4rem;
-}
-
-/* --- HAMBURGER COMPONENT (Desktop Default) --- */
+/* --- HAMBURGER --- */
 .hamburger {
-    display: none; /* Hidden by default on desktop */
+    display: none; 
     cursor: pointer;
     background: none;
     border: none;
     flex-direction: column;
     gap: 5px;
     padding: 5px;
-    z-index: 1001; /* Above the menu overlay */
+    z-index: 1002;
 }
-
 .hamburger .bar {
     width: 25px;
     height: 3px;
@@ -236,131 +111,157 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
-/* --- MOBILE RESPONSIVENESS (The "Premium Pill" Edition) --- */
+/* --- DESKTOP MENU --- */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: 5%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    z-index: 1002;
+    transition: top 0.6s ease;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--accent-orange); }
+
+/* Move desktop menu when header scrolls */
+body.scrolled-mode .nav-links {
+    top: 25px; 
+    height: 80px; 
+    right: 10%; 
+}
+
+/* --- HERO --- */
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 160px; 
+    padding-bottom: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 300; }
+.hero p { font-size: 1.2rem; color: #666; margin-bottom: 3rem; max-width: 600px; margin: 0 auto; }
+
+/* BUTTONS & SECTIONS */
+.cta-button {
+    background-color: transparent; border: 2px solid var(--text-dark); color: var(--text-dark);
+    padding: 1rem 2.5rem; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; border-radius: 50px;
+}
+.cta-button:hover { background-color: var(--accent-orange); border-color: var(--accent-orange); color: #fff; transform: translateY(-2px); }
+.content-section { padding: 4rem 10%; }
+.content-section h2 { text-align: center; margin-bottom: 3rem; font-weight: 400; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
+.card h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+.card p { color: #555; font-size: 0.95rem; }
+footer { text-align: center; padding: 3rem; font-size: 0.8rem; color: #888; margin-top: 4rem; }
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
 @media screen and (max-width: 768px) {
 
-    /* 1. HEADER (Allow the Pill!) */
-    /* We REMOVED the !important overrides. Now it inherits the desktop 
-       pill animation, but we tweak the sizing for small screens. */
+    /* 1. MOBILE HEADER */
     header.scrolled {
-        width: 92%; /* Slightly wider than desktop (85%) to maximize space */
-        top: 10px;  /* Closer to the top */
-        height: 70px; /* A bit more compact than desktop */
-        padding: 0 1.5rem;
-        /* Ensure the blur and shadow apply */
+        width: 92%; 
+        left: 4%; 
+        top: 10px;  
+        height: 70px;
+        padding: 0 2.2rem; 
+        
         background-color: rgba(255, 255, 255, 0.15); 
         backdrop-filter: blur(7px);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        -webkit-backdrop-filter: blur(7px);
     }
 
-    /*width: 85%; 
-    top: 25px;  
-    background-color: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(7px); 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    border-radius: 50px; 
-    border-bottom: none;
-    height: 80px; 
-    */
-
-    /* 2. LOGO (The Critical Fix) */
-    /* On mobile, we MUST keep the logo stacked inside the pill. 
-       If it un-stacks, it will hit the hamburger button. */
-    .logo-container, 
-    header.scrolled .logo-container {
-        flex-direction: column !important; /* Force stack */
-        align-items: flex-start !important;
-        gap: 0 !important;
-        height: 100%; /* Fill the pill height */
-        justify-content: center !important;
+    /* 2. LOGO ADJUSTMENTS */
+    .logo-container, header.scrolled .logo-container {
+        flex-direction: column !important; align-items: flex-start !important; gap: 0 !important;
+        height: 100%; justify-content: center !important;
     }
-
-    /* 3. TEXT SCALING */
-    /* Shrink the text when scrolled so it doesn't look cramped */
     .TitleTop, header.scrolled .TitleTop {
-        font-size: 35px !important; /* Default size */
-        margin-bottom: 12px !important;
-        transform: translateX(-5px) !important;
-        line-height: 1 !important;
+        font-size: 35px !important; margin-bottom: 12px !important; transform: translateX(-5px) !important; line-height: 1 !important;
     }
-    
-    /* When scrolled, shrink slightly more to look elegant */
-    header.scrolled .TitleTop {
-        font-size: 28px !important; 
-        margin-bottom: 8px !important;
-    }
-
+    header.scrolled .TitleTop { font-size: 28px !important; margin-bottom: 8px !important; }
     .TitleBottom, header.scrolled .TitleBottom {
-        font-size: 35px !important;
-        padding-bottom: 22px !important;
-        transform: translateX(10px) !important;
-        line-height: 0 !important;
-        color: var(--accent-orange) !important;
+        font-size: 35px !important; padding-bottom: 22px !important; transform: translateX(10px) !important; line-height: 0 !important; color: var(--accent-orange) !important;
     }
+    header.scrolled .TitleBottom { font-size: 28px !important; padding-bottom: 18px !important; }
 
-    header.scrolled .TitleBottom {
-        font-size: 28px !important; /* Match the top text */
-        padding-bottom: 18px !important;
-    }
+    /* 3. HAMBURGER */
+    .hamburger { display: flex; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
 
-    /* 4. HAMBURGER POSITIONING */
-    .hamburger {
-        display: flex;
-        position: absolute;
-        right: 20px;
-        /* Center vertically regardless of header height */
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2001; 
-    }
-
-    /* 5. MENU OVERLAY (Depth Effect) */
+    /* 4. THE MENU CARD (STRUCTURE & CONTRAST) */
     .nav-links {
         position: fixed;
-        top: 0; /* Start at the VERY top of the screen */
-        left: 0;
-        width: 100%;
-        height: 100vh; /* Full screen overlay */
-        background-color: var(--bg-cream); 
+        /* Moved down to 125px to clear the header completely */
+        top: 125px; 
+        
+        left: 5%; 
+        width: 90%; /* Centered nicely */
+        height: auto; 
+        
+        /* THE GLASS FIX FOR CREAM BACKGROUND */
+        /* Slightly more opaque (45%) so it doesn't vanish */
+        background-color: rgba(255, 255, 255, 0.45); 
+        
+        /* Heavy blur to smooth out anything behind it */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
+        /* SOLID WHITE BORDER - This creates the shape! */
+        border: 2px solid #FFFFFF;
+        
+        /* Stronger shadow to lift it off the cream background */
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        
+        border-radius: 30px; 
         
         flex-direction: column;
-        justify-content: center; /* Center links in the middle of screen */
+        justify-content: center; 
         align-items: center;
         gap: 2rem;
+        padding: 2.5rem 0; /* Taller card looks better */
         
-        /* It sits BEHIND the header (1000) so the pill floats over it */
-        z-index: 900; 
+        z-index: 1000;
         
-        transform: translateY(-100%); /* Slide down from top */
-        transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        
-        /* Add a little padding top so links don't hide behind the pill */
-        padding-top: 80px;
+        /* Animation */
+        opacity: 0;
+        visibility: hidden; 
+        transform: translateY(-10px); 
+        transition: all 0.3s ease-in-out;
     }
 
     .nav-links.active {
-        transform: translateY(0); 
-    }
-
-    /* 6. LINK ANIMATIONS */
-    .nav-links a {
-        font-size: 1.5rem;
-        opacity: 0; 
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-
-    .nav-links.active a {
         opacity: 1;
+        visibility: visible;
         transform: translateY(0);
-        /* Stagger the appearance of links */
-        transition-delay: 0.2s; 
+        top: 125px !important; /* Force position */
     }
-    
-    .nav-links.active li:nth-child(2) a { transition-delay: 0.3s; }
-    .nav-links.active li:nth-child(3) a { transition-delay: 0.4s; }
 
-    /* 7. HAMBURGER ANIMATION (X) */
+    /* 5. LINK STYLING */
+    .nav-links a { 
+        font-size: 1.5rem; /* Bigger text */
+        opacity: 0; 
+        transform: translateY(10px); 
+        transition: all 0.3s ease; 
+        color: var(--text-dark); /* Ensure contrast */
+    }
+    .nav-links.active a { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) a { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(3) a { transition-delay: 0.3s; }
+    
+    /* 6. HAMBURGER ANIMATION */
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
